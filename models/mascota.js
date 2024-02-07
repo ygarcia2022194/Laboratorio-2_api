@@ -1,20 +1,23 @@
 const {Schema, model} = require('mongoose');
 
 const MascotaSchema = Schema({
-    raza:{
+    tipoMascota:{
         type: String,
-        required: [true, 'La raza es obligatoria']
+        required: [true, 'El tipo de mascota es obligatorio']
     },
-    nombre_Mascota:{
+    raza:{
+        type: String,   
+    },
+    nombreMascota:{
         type: String,
         required: [true, 'El nombre de su mascota es obligatorio']
 
     },
-    nombre_Propetario:{
+    nombrePropetario:{
         type: String,
         required: [true, 'El nombre del dueño es obligatorio']
     },
-    edad_Mascota:{
+    edadMascota:{
         type: String,
         required: [true, 'La edad de la mascota es obligatorio']
     },
@@ -23,3 +26,5 @@ const MascotaSchema = Schema({
         default: false
     }
 });
+
+module.exports = model('Mascota', MascotaSchema);

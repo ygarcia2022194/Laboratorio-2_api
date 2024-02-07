@@ -6,6 +6,7 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         this.usuarioPath = '/api/usuarios';
+        this.mascotaPath = '/api/mascotas';
         this.conectarDB();
         this.middlewares();
         this.routes();
@@ -19,6 +20,7 @@ class Server{
 
     routes(){
         this.app.use(this.usuarioPath, require('../routes/user.routes'));
+        this.app.use(this.mascotaPath, require('../routes/mascota.routes'));
     }
 
     
