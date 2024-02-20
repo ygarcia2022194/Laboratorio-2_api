@@ -17,11 +17,13 @@ router.post(
     "/",
     [
         check("tipoMascota", "El tipo de mascota no puede estar vacio").not().isEmpty(),
+        check("raza", "La raza de la mascota no puede estar vacia").not().isEmpty(),
         check("nombreMascota", "El nombre de la mascota no puede estar vacio").not().isEmpty(),
         check("nombrePropetario", "El nombre del propetario no puede estar vacio").not().isEmpty(),
-        check("edadMascota", "La edad no puede quedar vacia").not().isEmpty()
+        check("edadMascota", "La edad no puede quedar vacia").not().isEmpty(),
+        validarCampos
     ], mascotaPost);
-router.get("/", mascotaGet);
+
 router.get(
     "/:id",
     [

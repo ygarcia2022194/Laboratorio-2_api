@@ -6,7 +6,8 @@ const MascotaSchema = Schema({
         required: [true, 'El tipo de mascota es obligatorio']
     },
     raza:{
-        type: String,   
+        type: String,
+        required: [true, 'La raza de mascota es obligatorio']   
     },
     nombreMascota:{
         type: String,
@@ -23,7 +24,7 @@ const MascotaSchema = Schema({
     },
     estado:{
         type: Boolean,
-        default: false
+        default: true
     }
 });
 
